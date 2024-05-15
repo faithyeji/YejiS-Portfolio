@@ -12,7 +12,7 @@ export default function Nav() {
         </div>
         <div>
           <a href="/">
-            <img src="/public/yejiLogo.svg" className=" w-7 pb-2"></img>
+            <img src="/yejiLogo.svg" className=" w-7 pb-2"></img>
           </a>
         </div>
         <div>
