@@ -7,6 +7,7 @@
   src: url(../public/assets/fonts/ITC-Garamond/ITCGaramondStdLightNarrow.woff)
     format("woff");
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -14,16 +15,22 @@
   src: url(../public/assets/fonts/ITC-Garamond/ITCGaramondStdLightNarrowItalic.woff)
     format("woff");
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Elza";
   src: url(../public/assets/fonts/Elza.woff) format("woff");
   font-weight: normal;
+  font-display: swap;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 1.25rem;
 }
 
 body {
@@ -33,11 +40,11 @@ body {
   overflow-x: hidden;
 }
 
-.content {
+/* .content {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-}
+} */
 
 /* REPLACE! */
 @keyframes fadeInAnimation {

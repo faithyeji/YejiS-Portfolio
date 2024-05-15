@@ -1,5 +1,6 @@
 ---
 import {SEO} from "astro-seo";
+import { ViewTransitions } from 'astro:transitions';
 const {title, seoTitle, seoDesc } = Astro.props;
 ---
 
@@ -11,4 +12,5 @@ const {title, seoTitle, seoDesc } = Astro.props;
   <link rel="stylesheet" href="src/App.css" />
   <link rel="icon" type="image/x-icon" href="../../public/yejiLogo.svg">
   <title>{title}</title>
+  <ViewTransitions />
 </head>

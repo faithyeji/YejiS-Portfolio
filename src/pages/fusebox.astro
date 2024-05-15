@@ -1,20 +1,46 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
-import Project from "../components/Project.astro"
 
 ---
 <MainLayout title="Yeji Fusebox Project" seoTitle="Fusebox" seoDesc="Connecting to Create.">
 
 <div class="mt-20 mx-20 font-serif" >
-  <h1 class="header">Fusebox</h1>
-  <h3 class="font-sans text-neutral-400">Connecting to Create.</h3>
-  <!-- sandbox! -->
-  <div class=" mt-12 flex flex-wrap gap-5 w-auto">
-    <Project projectName="Fusebox" type="full-stack" imgsrc="../../public/assets/images/tattoo.webp"></Project>
-    <Project projectName="Fusebox" type="full-stack"></Project>
-    <Project projectName="Fusebox" type="full-stack"></Project>
-    <Project projectName="Fusebox" type="full-stack"></Project>
-
+  <div class="flex align-middle items-center justify-center gap-3">
+    <img src="/assets/images/smiley.png" alt="smiley face" class=" w-20 h-fit shrink-0 pb-4">
+    <div>
+      <h1 class="header pr-6  text-blue-600">Fusebox</h1>
+      <h3 class="font-sans text-neutral-400">Connecting to Create.</h3>
+    </div>
   </div>
+
+  <!-- DETAILS -->
+  <div class="flex mt-4 gap-10 font-sans text-sm justify-center">
+    <!-- timeline -->
+    <div class="w-32 leading-4">
+      <h2 class="font-serif text-xl">Timeline:</h1>
+      9.2023 - 5.2024
+    </div>
+    <!-- team -->
+    <div class="w-32 leading-4">
+      <h2 class="font-serif text-xl">Team:</h1>
+      Rory An, Paris Little, Joanna Poon, Lauren Graham, Henry Groome
+    </div>
+    <!-- role --> 
+    <div class="w-32 leading-4">
+      <h2 class="font-serif text-xl">Role:</h1>
+      <p>Project Lead & Product Manager, Full-Stack Developer, Designer</p>
+    </div>
+    <!-- tools -->
+    <div class="w-32 leading-4">
+      <h2 class="font-serif text-xl">Tools:</h1>
+      <p>HTML, CSS, JavaScript, PHP, SQL</p>
+    </div>
+  </div>
+  
+  <div class="mt-16">
+    <h1 class="text-xl">Fusebox started from my <span class="font-italic text-blue-600">frustration</span> in finding project partners outside of my network.<br/>How do we connect USC creatives?</h1>
+  </div>
+
+
 
 </div>

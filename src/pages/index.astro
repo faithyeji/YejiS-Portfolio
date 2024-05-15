@@ -7,7 +7,7 @@ import flowerImage from '../../public/assets/images/flowers.png'
 <MainLayout title="Yeji Seo Portfolio Site" seoTitle="Yeji's World" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
   <div class="content">
   <!-- Landing intro -->
-  <img src='../../public/assets/images/flowers.png' alt="flower image" class="flower w-240 opacity-50 -z-10 absolute left-128" />
+  <img src='../assets/images/ascii-art.png' alt="flower background" class="flower w-256 opacity-50 -z-10 absolute left-104" />
   <div class="">
     <div class="font-serif text-neutral-400 w-96 mt-14 mx-20">
       <div class="flex gap-4 h-14 content-end items-end">
@@ -40,8 +40,9 @@ import flowerImage from '../../public/assets/images/flowers.png'
   </div>
 
   <!-- Current projects -->
-  <div class=" mt-48 mx-20 w-auto z-10 font-serif">
-    <h1 class="header text-3xl">projects. <span class="text-neutral-300 text-2xl mb-2">↓</span></h1>
+  <div class=" mt-48 mx-20 w-auto z-10 font-serif flex gap-2">
+    <div class="header text-3xl pb-4">projects.</div>
+    <div class="text-neutral-300 text-2xl mb-2 animate-bounce">↓</div>
   </div>
 
   <div class=" mt-10 mx-20 w-auto z-10">    
@@ -49,32 +50,32 @@ import flowerImage from '../../public/assets/images/flowers.png'
     <div class="flex flex-wrap gap-8 z-10">
       <!-- Fusebox -->
       <a href="/fusebox"><div class=" w-128 h-72 bg-white rounded-lg overflow-hidden relative group shrink-0 drop-shadow-md">
-        <img src="../../public/assets/images/fuseboxlogo.webp" class="absolute top-20 left-8 w-40">
+        <img src="/assets/images/fuseboxlogo.webp" class="absolute top-20 left-8 w-40">
         <!-- <label class="absolute top-20 left-4">connecting creatives.</label> -->
-        <img src="../../public/assets/images/businesscard2.webp" alt="card2" class="absolute w-84 left-56 top-20 rotate-[6deg] transform transition ease-in-out delay-150 origin-bottom-right group-hover:rotate-[8deg] group-hover:scale-105">
-        <img src="../../public/assets/images/businesscard.webp" alt="card1" class="absolute w-84 left-52 top-16 rotate-[6deg] transform transition ease-in-out delay-150 group-hover:rotate-[0deg] group-hover:scale-105">
+        <img src="/assets/images/businesscard2.webp" alt="card2" class="absolute w-84 left-56 top-20 rotate-[6deg] transform transition ease-in-out delay-150 origin-bottom-right group-hover:rotate-[8deg] group-hover:scale-105">
+        <img src="/assets/images/businesscard.webp" alt="card1" class="absolute w-84 left-52 top-16 rotate-[6deg] transform transition ease-in-out delay-150 group-hover:rotate-[0deg] group-hover:scale-105">
       </div></a>
       <!-- We Are G.A.M.E. -->
-      <img src="../../public/assets/images/wearegame.webp" alt="we are game" class=" w-fit h-72 drop-shadow-md rounded-lg shrink-0">
+      <img src="/assets/images/wearegame.webp" alt="we are game" class=" w-fit h-72 drop-shadow-md rounded-lg shrink-0">
     </div>
 
     <!-- row 2 -->
     <div class=" mt-6 flex flex-wrap gap-8 z-10">
       <!-- Encore -->
-      <img src="../../public/assets/images/encore.webp" alt="encore" class=" w-60 h-fit drop-shadow-md shrink-0">
+      <img src="/assets/images/encore.webp" alt="encore" class=" w-60 h-fit drop-shadow-md shrink-0 transform transition hover:scale-105 hover:rotate-[-4deg]">
       <div class="flex flex-col gap-4">
         <!-- Treffa -->
-        <img src="../../public/assets/images/treffa.webp" alt="treffa" class=" w-92 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+        <img src="/assets/images/treffa.webp" alt="treffa" class=" w-92 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
         <!-- Tattoo -->
-        <img src="../../public/assets/images/tattoo.webp" alt="tattoo" class=" w-92 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+        <img src="/assets/images/tattoo.webp" alt="tattoo" class=" w-92 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
       </div>
       <div class="flex flex-col gap-4">
         <!-- Smell Visualization -->
         <video autoplay loop muted class="mt-2 w-86 h-fit rounded-lg drop-shadow-md shrink-0">
-          <source type="video/webm" src="../../public/assets/videos/smell.webm">
+          <source type="video/webm" src="assets/videos/smelllog.webm">
         </video>
          <!-- Namu -->
-         <img src="../../public/assets/images/namu.webp" alt="namu" class=" w-68 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+         <img src="assets/images/namu.webp" alt="namu" class=" w-68 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
       </div>
   </div>
 
@@ -88,37 +89,40 @@ import flowerImage from '../../public/assets/images/flowers.png'
 
 <!-- googly eye script -->
 <script>
-const pupils: NodeListOf<HTMLElement> = document.querySelectorAll(".pupil");
-
-for (let i = 0; i < pupils.length; i++) {
-    const offset = pupils[i].getBoundingClientRect();
-    (pupils[i] as any)['centerX'] = offset.left + offset.width / 2;
-    (pupils[i] as any)['centerY'] = offset.bottom + offset.height / 2;
-}
-
-
-function goGoogly(e: MouseEvent | TouchEvent): void {
-    let mouseX: number;
-    let mouseY: number;
-
-    if ('targetTouches' in e && e.targetTouches[0]) {
-        e.preventDefault();
-        mouseX = e.targetTouches[0].pageX;
-        mouseY = e.targetTouches[0].pageY;
-    } else {
-        mouseX = (e as MouseEvent).clientX + window.pageXOffset;
-        mouseY = (e as MouseEvent).clientY + window.pageYOffset;
-    }
+  document.addEventListener('astro:page-load', () => {
+    // Runs on every page navigation!
+    const pupils: NodeListOf<HTMLElement> = document.querySelectorAll(".pupil");
 
     for (let i = 0; i < pupils.length; i++) {
-        const pupil = pupils[i] as any; 
-        pupil['radians'] = Math.atan2(mouseX - pupil['centerX'], mouseY - pupil['centerY']);
-        pupil['degree'] = (pupil['radians'] * (180 / Math.PI) * -1);
-        pupil.style.transform = `rotate(${pupil['degree'] + 180}deg)`;
+        const offset = pupils[i].getBoundingClientRect();
+        (pupils[i] as any)['centerX'] = offset.left + offset.width / 2;
+        (pupils[i] as any)['centerY'] = offset.bottom + offset.height / 2;
     }
-}
-window.addEventListener('mousemove', goGoogly);
-window.addEventListener('touchstart', goGoogly);
-window.addEventListener('touchmove', goGoogly);
 
+
+    function googly(e: MouseEvent | TouchEvent): void {
+        let mouseX: number;
+        let mouseY: number;
+
+        if ('targetTouches' in e && e.targetTouches[0]) {
+            e.preventDefault();
+            mouseX = e.targetTouches[0].pageX;
+            mouseY = e.targetTouches[0].pageY;
+        } else {
+            mouseX = (e as MouseEvent).clientX + window.pageXOffset;
+            mouseY = (e as MouseEvent).clientY + window.pageYOffset;
+        }
+
+        for (let i = 0; i < pupils.length; i++) {
+            const pupil = pupils[i] as any; 
+            pupil['radians'] = Math.atan2(mouseX - pupil['centerX'], mouseY - pupil['centerY']);
+            pupil['degree'] = (pupil['radians'] * (180 / Math.PI) * -1);
+            pupil.style.transform = `rotate(${pupil['degree'] + 180}deg)`;
+        }
+    }
+    window.addEventListener('mousemove', googly);
+    window.addEventListener('touchstart', googly);
+    window.addEventListener('touchmove', googly);
+
+  }, { once: false });
 </script>

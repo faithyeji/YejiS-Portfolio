@@ -1,32 +1,14 @@
 ---
 const {title, seoDesc, seoTitle} = Astro.props;
 import MainHead from "../layouts/MainHead.astro"
+import Nav from "../components/Nav.tsx"
 
 ---
-
 <html>
   <MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc}></MainHead>
   <body>
 		<!-- header -->
-		<nav class="mx-20 mt-12">
-			<div class="font-serif text-xl flex justify-between content-center items-center">
-				<div class="flex gap-5">
-					<div><a href="/playground">playground</a></div>
-					<div><a href="/about">about</a></div>
-				</div>
-				<div>
-					<a href="/"><img src="../../public/yejiLogo.svg" class=" w-7 pb-2"></img></a>
-				</div>
-				<div>
-					<div class="flex gap-3 text-lg">
-						<div><a href="https://github.com/faithyeji" target="_blank">github</a></div>
-						<div><a href="https://read.cv/seoyemilk" target="_blank">CV</a></div>
-						<div>hello@faithyejiseo↗</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-
+			<Nav />
 			<!-- page content -->
     	<slot />
   </body>
