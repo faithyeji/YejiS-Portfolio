@@ -1,0 +1,124 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+import { Image } from 'astro:assets';
+import flowerImage from '../../public/assets/images/flowers.png'
+---
+
+<MainLayout title="Yeji Seo Portfolio Site" seoTitle="Yeji's World" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
+  <div class="content">
+  <!-- Landing intro -->
+  <img src='../../public/assets/images/flowers.png' alt="flower image" class="flower w-240 opacity-50 -z-10 absolute left-128" />
+  <div class="">
+    <div class="font-serif text-neutral-400 w-96 mt-14 mx-20">
+      <div class="flex gap-4 h-14 content-end items-end">
+        <h1 class="header">hi, I’m <span class="font-italic text-blue-600">Yeji</span></h1>
+        <!-- googly goo -->
+        <div class="googly">
+            <div class="pupil"></div>
+            <div class="highlight"></div>
+        </div>
+      </div>
+      <h1 class="header">welcome to my world!</h1>
+      
+      <h2 class="text-2xl mt-4 leading-6">
+        currently: studying human-centered design/entrepreneurship <a href="https://iovine-young.usc.edu/" target="_blank">@USC-IYA↗</a> & <a href="https://www.cs.usc.edu/academic-programs/undergrad/computer-science-games/" target="_blank">computer science @USC-GAMES↗</a>. * 
+      </h2>
+      <h2 class="text-2xl mt-6 leading-6">
+        i’m a creative technologist & developer who loves to play in: design, engineering, prototyping, fun interactions, ++. 
+      </h2>
+
+      <div class="text-xl mt-6 text-neutral-300 flex">
+        <p>and on the side..</p>
+        <div class="words h-6">
+          <span class="rotate">soymilk enthusiast.</span>
+          <span class="rotate">amateur skater.</span>
+          <span class="rotate">doodler.</span>
+          <span class="rotate">playlist curator.</span>
+          <span class="rotate">soymilk enthusiast.</span>
+        </div>
+    </div>
+  </div>
+
+  <!-- Current projects -->
+  <div class=" mt-48 mx-20 w-auto z-10 font-serif">
+    <h1 class="header text-3xl">projects. <span class="text-neutral-300 text-2xl mb-2">↓</span></h1>
+  </div>
+
+  <div class=" mt-10 mx-20 w-auto z-10">    
+    <!-- row 1 -->
+    <div class="flex flex-wrap gap-8 z-10">
+      <!-- Fusebox -->
+      <a href="/fusebox"><div class=" w-128 h-72 bg-white rounded-lg overflow-hidden relative group shrink-0 drop-shadow-md">
+        <img src="../../public/assets/images/fuseboxlogo.webp" class="absolute top-20 left-8 w-40">
+        <!-- <label class="absolute top-20 left-4">connecting creatives.</label> -->
+        <img src="../../public/assets/images/businesscard2.webp" alt="card2" class="absolute w-84 left-56 top-20 rotate-[6deg] transform transition ease-in-out delay-150 origin-bottom-right group-hover:rotate-[8deg] group-hover:scale-105">
+        <img src="../../public/assets/images/businesscard.webp" alt="card1" class="absolute w-84 left-52 top-16 rotate-[6deg] transform transition ease-in-out delay-150 group-hover:rotate-[0deg] group-hover:scale-105">
+      </div></a>
+      <!-- We Are G.A.M.E. -->
+      <img src="../../public/assets/images/wearegame.webp" alt="we are game" class=" w-fit h-72 drop-shadow-md rounded-lg shrink-0">
+    </div>
+
+    <!-- row 2 -->
+    <div class=" mt-6 flex flex-wrap gap-8 z-10">
+      <!-- Encore -->
+      <img src="../../public/assets/images/encore.webp" alt="encore" class=" w-60 h-fit drop-shadow-md shrink-0">
+      <div class="flex flex-col gap-4">
+        <!-- Treffa -->
+        <img src="../../public/assets/images/treffa.webp" alt="treffa" class=" w-92 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+        <!-- Tattoo -->
+        <img src="../../public/assets/images/tattoo.webp" alt="tattoo" class=" w-92 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+      </div>
+      <div class="flex flex-col gap-4">
+        <!-- Smell Visualization -->
+        <video autoplay loop muted class="mt-2 w-86 h-fit rounded-lg drop-shadow-md shrink-0">
+          <source type="video/webm" src="../../public/assets/videos/smell.webm">
+        </video>
+         <!-- Namu -->
+         <img src="../../public/assets/images/namu.webp" alt="namu" class=" w-68 h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+      </div>
+  </div>
+
+  <div class="mt-20">
+  </div>
+  <div class="font-serif my-10 text-end">coded with <3, FYS</div>
+
+  </div>
+
+</MainLayout>
+
+<!-- googly eye script -->
+<script>
+const pupils: NodeListOf<HTMLElement> = document.querySelectorAll(".pupil");
+
+for (let i = 0; i < pupils.length; i++) {
+    const offset = pupils[i].getBoundingClientRect();
+    (pupils[i] as any)['centerX'] = offset.left + offset.width / 2;
+    (pupils[i] as any)['centerY'] = offset.bottom + offset.height / 2;
+}
+
+
+function goGoogly(e: MouseEvent | TouchEvent): void {
+    let mouseX: number;
+    let mouseY: number;
+
+    if ('targetTouches' in e && e.targetTouches[0]) {
+        e.preventDefault();
+        mouseX = e.targetTouches[0].pageX;
+        mouseY = e.targetTouches[0].pageY;
+    } else {
+        mouseX = (e as MouseEvent).clientX + window.pageXOffset;
+        mouseY = (e as MouseEvent).clientY + window.pageYOffset;
+    }
+
+    for (let i = 0; i < pupils.length; i++) {
+        const pupil = pupils[i] as any; 
+        pupil['radians'] = Math.atan2(mouseX - pupil['centerX'], mouseY - pupil['centerY']);
+        pupil['degree'] = (pupil['radians'] * (180 / Math.PI) * -1);
+        pupil.style.transform = `rotate(${pupil['degree'] + 180}deg)`;
+    }
+}
+window.addEventListener('mousemove', goGoogly);
+window.addEventListener('touchstart', goGoogly);
+window.addEventListener('touchmove', goGoogly);
+
+</script>

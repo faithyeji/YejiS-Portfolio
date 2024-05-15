@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+import Project from "../components/Project.astro"
+
+---
+<MainLayout title="Yeji's Playground" seoTitle="Yeji's Playground" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
+
+<div class="mt-20 mx-20 font-serif" >
+  <div class="flex">
+    <h1 class="header rotate-2">play</h1>
+    <h1 class="header rotate-3 leading-9">ground.</h1>
+  </div>
+  <h3 class="font-sans text-neutral-400">(aka my sandbox of creative experiments)</h3>
+  <!-- sandbox! -->
+  <div class=" mt-12 flex flex-wrap gap-5 w-auto">
+    <Project projectName="Fusebox" type="full-stack" imgsrc="../../public/assets/images/tattoo.webp"></Project>
+    <Project projectName="Fusebox" type="full-stack"></Project>
+    <Project projectName="Fusebox" type="full-stack"></Project>
+    <Project projectName="Fusebox" type="full-stack"></Project>
+
+  </div>
+
+</div>

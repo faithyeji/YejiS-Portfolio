@@ -1,0 +1,9 @@
+---
+const { projectName, type, imgsrc } = Astro.props;
+---
+<div class="w-88 h-full bg-cover bg-neutral-300 rounded-md relative" style={`background-image: url('${imgsrc}');`}>
+  <div class="opacity-0 hover:opacity-100 h-64 duration-300 text-md text-white font-semibold bottom-0 ">
+    {projectName}<br/>
+    {type}
+  </div>
+</div>
