@@ -47,72 +47,74 @@ import MainLayout from "../layouts/MainLayout.astro"
 
 <!-- drawing -->
 <script>
-  let selectedElement = document.querySelector(".selected") as HTMLElement;
-  let color:string = selectedElement ? window.getComputedStyle(selectedElement).backgroundColor : "";
+  document.addEventListener('astro:page-load', () => {
+    let selectedElement = document.querySelector(".selected") as HTMLElement;
+    let color:string = selectedElement ? window.getComputedStyle(selectedElement).backgroundColor : "";
 
-  const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-  const context = canvas.getContext("2d");
-  if (!context) {
-    throw new Error("2D context not supported");
-  }
-
-  let lastEvent: MouseEvent | null = null;
-  let mouseDown = false;
-
-  // clicking on color items
-  const controls = document.querySelector(".controls") as HTMLElement;
-  controls.addEventListener("click", (e) => {
-    const target = e.target as HTMLElement;
-    if (target.classList.contains("rounded-full")) {
-      // deselect + select
-      const siblings = Array.from(target.parentNode?.children?? []);
-      siblings.forEach(sibling => sibling.classList.remove("selected"));
-      target.classList.add("selected");
-      // store current color
-      color = window.getComputedStyle(target).backgroundColor;
+    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+    const context = canvas.getContext("2d");
+    if (!context) {
+      throw new Error("2D context not supported");
     }
-  });
 
-  // drawing
-  canvas.addEventListener("mousedown", (e) => {
-    lastEvent = e;
-    mouseDown = true;
-  });
+    let lastEvent: MouseEvent | null = null;
+    let mouseDown = false;
 
-  canvas.addEventListener("mousemove", (e) => {
-    if (mouseDown && lastEvent) {
-      context.beginPath();
-      context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-      context.lineTo(e.offsetX, e.offsetY);
-      context.strokeStyle = color;
-      context.lineWidth = 4;
-      context.lineCap = 'round';
-      context.stroke();
-      lastEvent = e;
-    }
-  });
-
-  canvas.addEventListener("mouseup", () => {
-    mouseDown = false;
-  });
-  canvas.addEventListener("mouseleave", () => {
-    mouseDown = false;
-  });
-
-  // clear canvas
-  function clearCanvas() {
-    canvas.classList.add("fade-out");
-    canvas.addEventListener('animationend', () => {
-      if (context){
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        canvas.classList.remove("fade-out");
+    // clicking on color items
+    const controls = document.querySelector(".controls") as HTMLElement;
+    controls.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains("rounded-full")) {
+        // deselect + select
+        const siblings = Array.from(target.parentNode?.children?? []);
+        siblings.forEach(sibling => sibling.classList.remove("selected"));
+        target.classList.add("selected");
+        // store current color
+        color = window.getComputedStyle(target).backgroundColor;
       }
-    }, { once: true }); 
-  }
+    });
 
-  const eraseButton = document.getElementById("clear-canvas") as HTMLElement;
-  eraseButton?.addEventListener("click", (e) => {
-    clearCanvas();
-  });
+    // drawing
+    canvas.addEventListener("mousedown", (e) => {
+      lastEvent = e;
+      mouseDown = true;
+    });
+
+    canvas.addEventListener("mousemove", (e) => {
+      if (mouseDown && lastEvent) {
+        context.beginPath();
+        context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+        context.lineTo(e.offsetX, e.offsetY);
+        context.strokeStyle = color;
+        context.lineWidth = 4;
+        context.lineCap = 'round';
+        context.stroke();
+        lastEvent = e;
+      }
+    });
+
+    canvas.addEventListener("mouseup", () => {
+      mouseDown = false;
+    });
+    canvas.addEventListener("mouseleave", () => {
+      mouseDown = false;
+    });
+
+    // clear canvas
+    function clearCanvas() {
+      canvas.classList.add("fade-out");
+      canvas.addEventListener('animationend', () => {
+        if (context){
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          canvas.classList.remove("fade-out");
+        }
+      }, { once: true }); 
+    }
+
+    const eraseButton = document.getElementById("clear-canvas") as HTMLElement;
+    eraseButton?.addEventListener("click", (e) => {
+      clearCanvas();
+    });
+  }, { once: false });
 </script>
 </MainLayout>
