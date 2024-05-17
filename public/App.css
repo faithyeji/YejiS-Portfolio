@@ -165,6 +165,8 @@ img,
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
+/* about page */
+
 .yeji {
   -webkit-mask-image: -webkit-gradient(
     linear,
@@ -174,4 +176,37 @@ img,
     to(rgba(0, 0, 0, 0))
   );
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.canvas {
+  z-index: 20;
+  position: absolute;
+  display: block;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fade-out {
+  animation: fadeOut 0.2s forwards;
+  animation-timing-function: ease-out;
+}
+
+.controls {
+  z-index: 25;
+}
+
+.selected {
+  border: 2px solid rgb(215, 215, 215);
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

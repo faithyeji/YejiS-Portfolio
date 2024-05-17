@@ -2,9 +2,22 @@
 import MainLayout from "../layouts/MainLayout.astro"
 ---
 <MainLayout title="About Yeji" seoTitle="About Yeji" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
-
-<div class="flex gap-6 m-auto mt-20 w-auto z-10 font-serif justify-center">
-  <img src="/assets/images/yeji2.png" alt="yeji seo halftone" class="yeji w-3/12 rotate-[-3deg] h-fit mt-10 opacity-90">
+<!-- drawing -->
+<canvas width="2000" height="800" id="canvas" class="canvas"></canvas>
+<div class="flex gap-6 m-auto mt-20 w-auto z-10 font-serif justify-center prevent-select">
+  <div class="w-3/12 flex flex-col justify-center items-center content-center">
+    <img src="/assets/images/yeji2.png" alt="yeji seo halftone" class="yeji rotate-[-3deg] h-fit mt-8 opacity-90 pr-10">
+    <p class="w-3/5 leading-0 mt-4 font-sans text-xs text-neutral-400">
+      (when i get distracted from reading i like to doodle..
+      feel free to leave something here!)
+    </p>
+    <div class="flex gap-2 justify-center mt-4 controls pr-4">
+      <div id="clear-canvas" class="border-dashed border-2 border-blue-600 px-2 hover:bg-blue-300 transition">wipe</div>
+      <div class="selected rounded-full bg-black w-6 h-6"></div>
+      <div class="rounded-full bg-red-500 w-6 h-6"></div>
+      <div class="rounded-full bg-blue-500 w-6 h-6"></div>
+    </div>
+  </div>
   <div class="mt-10 w-136">
     <div class="flex gap-4 flex-wrap gap-y-0">
       <img src="/assets/images/yejiWriting.webp" class="w-40 h-fit shrink-0">
@@ -17,19 +30,88 @@ import MainLayout from "../layouts/MainLayout.astro"
         ...current USC student and 1 of 42 members in the 9th cohort of the Iovine and Young Academy, studying integrated Computer Science and Design.
       </p>
       <p class="mt-5">
-        I started my journey in college as a designer who fell in love with software and its infinite potential to create. As I studied computer science and graphics, I found my true passion: prototyping in the great, sometimes-silly space where technology and art collide. 
+        I started my journey in college as a designer who fell in love with software and its infinite potential to create. As I studied computer science and graphics, I found my true passion: prototyping 0&rarr;1 in the great, sometimes-silly space where technology and art collide. 
       </p>
       <p class="mt-5">
-        My philosophies: <br/>
-        1. never losing childish wonder and curiosity in learning.<br/>
-        2. working and studying in intersections.<br/>
+        My philosophies: <br>
+        1. never losing childish wonder and curiosity in learning.<br>
+        2. working and studying in intersections.<br>
         3. trying to leave things better than I found them.
       </p>
       <p class="mt-5">
-        I’m always just an email away. Let’s create some magic together. 🪄✨
+        Let’s create some magic together. 🪄✨
       </p>
-
     </div>
   </div>
-
 </div>
+
+<!-- drawing -->
+<script>
+  let selectedElement = document.querySelector(".selected") as HTMLElement;
+  let color:string = selectedElement ? window.getComputedStyle(selectedElement).backgroundColor : "";
+
+  const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+  const context = canvas.getContext("2d");
+
+  if (!context) {
+    throw new Error("2D context not supported");
+  }
+
+  let lastEvent: MouseEvent | null = null;
+  let mouseDown = false;
+
+  // clicking on color items
+  const controls = document.querySelector(".controls") as HTMLElement;
+  controls.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains("rounded-full")) {
+      // deselect + select
+      const siblings = Array.from(target.parentNode.children);
+      siblings.forEach(sibling => sibling.classList.remove("selected"));
+      target.classList.add("selected");
+      // store current color
+      color = window.getComputedStyle(target).backgroundColor;
+    }
+  });
+
+  // drawing
+  canvas.addEventListener("mousedown", (e) => {
+    lastEvent = e;
+    mouseDown = true;
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    if (mouseDown) {
+      context.beginPath();
+      context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+      context.lineTo(e.offsetX, e.offsetY);
+      context.strokeStyle = color;
+      context.lineWidth = 4;
+      context.lineCap = 'round';
+      context.stroke();
+      lastEvent = e;
+    }
+  });
+
+  canvas.addEventListener("mouseup", () => {
+    mouseDown = false;
+  });
+  canvas.addEventListener("mouseleave", () => {
+    mouseDown = false;
+  });
+
+  // clear canvas
+  function clearCanvas() {
+    canvas.classList.add("fade-out");
+    canvas.addEventListener('animationend', () => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      canvas.classList.remove("fade-out");
+    }, { once: true }); 
+  }
+
+  const eraseButton = document.getElementById("clear-canvas") as HTMLElement;
+  eraseButton.addEventListener("click", (e) => {
+    clearCanvas();
+  });
+</script>
+</MainLayout>
