@@ -66,7 +66,7 @@ import MainLayout from "../layouts/MainLayout.astro"
     const target = e.target as HTMLElement;
     if (target.classList.contains("rounded-full")) {
       // deselect + select
-      const siblings = Array.from(target.parentNode.children);
+      const siblings = Array.from(target.parentNode?.children?? []);
       siblings.forEach(sibling => sibling.classList.remove("selected"));
       target.classList.add("selected");
       // store current color
@@ -81,7 +81,7 @@ import MainLayout from "../layouts/MainLayout.astro"
   });
 
   canvas.addEventListener("mousemove", (e) => {
-    if (mouseDown) {
+    if (mouseDown && lastEvent) {
       context.beginPath();
       context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
       context.lineTo(e.offsetX, e.offsetY);
@@ -110,7 +110,7 @@ import MainLayout from "../layouts/MainLayout.astro"
   }
 
   const eraseButton = document.getElementById("clear-canvas") as HTMLElement;
-  eraseButton.addEventListener("click", (e) => {
+  eraseButton?.addEventListener("click", (e) => {
     clearCanvas();
   });
 </script>
