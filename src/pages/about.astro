@@ -52,7 +52,6 @@ import MainLayout from "../layouts/MainLayout.astro"
 
   const canvas = document.getElementById("canvas") as HTMLCanvasElement;
   const context = canvas.getContext("2d");
-
   if (!context) {
     throw new Error("2D context not supported");
   }
@@ -104,8 +103,10 @@ import MainLayout from "../layouts/MainLayout.astro"
   function clearCanvas() {
     canvas.classList.add("fade-out");
     canvas.addEventListener('animationend', () => {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      canvas.classList.remove("fade-out");
+      if (context){
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.classList.remove("fade-out");
+      }
     }, { once: true }); 
   }
 
