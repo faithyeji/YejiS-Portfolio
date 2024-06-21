@@ -41,7 +41,7 @@ export default function Nav() {
                 CV
               </a>
             </div>
-            <div>hello@faithyejiseo↗</div>
+            <div>hello@faithyejiseo↗&#xFE0E;</div>
           </div>
         </div>
       </div>
