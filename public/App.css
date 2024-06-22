@@ -29,7 +29,7 @@
 @font-face {
   font-family: "ITCfallback";
   src: local("Times New Roman");
-  size-adjust: 90%;
+  size-adjust: 80%;
 }
 /* ascent-override: 105%;
   descent-override: 35%;
