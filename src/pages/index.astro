@@ -93,7 +93,7 @@ import flowerImage from '../../public/assets/images/flowers.png'
   <div class="font-serif my-10 text-end">coded with <3, FYS</div>
 
   </div>
-  <button id="PermsButton" onclick="googly()" style="height:50px;">Get Googly Permissions</button>
+  <button id="PermsButton" onclick="googly2()" style="height:50px;">Get Googly Permissions</button>
 </MainLayout>
 
 <!-- googly eye script -->
@@ -137,7 +137,7 @@ import flowerImage from '../../public/assets/images/flowers.png'
 
 <!-- mobile googly shake -->
 <script>
-  function googly() {
+  function googly2() {
     (DeviceMotionEvent as any).requestPermission().then((response:PermissionState) => {
       if (response == 'granted') {
           window.addEventListener('devicemotion', (event) => {
