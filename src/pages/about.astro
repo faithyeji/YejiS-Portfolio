@@ -4,14 +4,14 @@ import MainLayout from "../layouts/MainLayout.astro"
 <MainLayout title="About Yeji" seoTitle="About Yeji" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
 <!-- drawing -->
 <canvas width="2000" height="800" id="canvas" class="canvas"></canvas>
-<div class="flex gap-6 m-auto mt-20 w-auto z-10 font-serif justify-center prevent-select">
+<div class="flex gap-6 m-auto mt-0 sm:mt-20 w-auto z-10 font-serif justify-center prevent-select">
   <div class="w-3/12 flex flex-col justify-center items-center content-center">
-    <img src="/assets/images/yeji2.png" alt="yeji seo halftone" class="yeji rotate-[-3deg] max-h-fit mt-8 opacity-90 pr-10">
-    <p class="w-3/5 leading-0 mt-4 font-sans text-xs text-neutral-400">
+    <img src="/assets/images/yeji2.png" alt="yeji seo halftone" class="yeji rotate-[-3deg] max-h-fit min-w-72 mt-8 opacity-90 pr-10 hidden sm:block">
+    <p class="w-3/5 leading-0 mt-4 font-sans text-xs text-neutral-400 hidden sm:block">
       (when i get distracted from reading i like to doodle..
       feel free to leave something here!)
     </p>
-    <div class="flex gap-2 justify-center mt-4 controls pr-4">
+    <div class="hidden sm:flex gap-2 justify-center mt-4 controls pr-4">
       <div id="clear-canvas" class="border-dashed border-2 border-blue-600 px-2 hover:bg-blue-300 transition">wipe</div>
       <div class="selected rounded-full bg-black w-6 h-6"></div>
       <div class="rounded-full bg-red-500 w-6 h-6"></div>
@@ -21,12 +21,15 @@ import MainLayout from "../layouts/MainLayout.astro"
   <div class="mt-10 w-136">
     <div class="flex gap-4 flex-wrap gap-y-0">
       <img src="/assets/images/yejiWriting.webp" class="w-40 max-h-fit shrink-0">
-      <div class="text-6xl pt-2">
+      <div class="text-6xl pt-2 hidden sm:block">
         <h1>is a...</h1>
       </div>
     </div>
-    <div class=" text-neutral-400 text-xl leading-6 mt-4  w-4/5">
-      <p>
+    <div class=" text-neutral-400 text-md sm:text-xl leading-5 sm:leading-6 mt-4 w-56 sm:w-4/5">
+      <p class="block sm:hidden">
+        ...is a current USC student and 1 of 42 members in the 9th cohort of the Iovine and Young Academy, studying integrated Computer Science and Design.
+      </p>
+      <p class="hidden sm:block">
         ...current USC student and 1 of 42 members in the 9th cohort of the Iovine and Young Academy, studying integrated Computer Science and Design.
       </p>
       <p class="mt-5">
