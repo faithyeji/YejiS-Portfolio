@@ -94,10 +94,9 @@ import flowerImage from '../../public/assets/images/flowers.png'
 
   </div>
   <button id="PermsButton" onclick="googly2()" style="height:50px;">Get Googly Permissions</button>
-</MainLayout>
 
 <!-- googly eye script -->
-<script>
+  <script>
   document.addEventListener('astro:page-load', () => {
     // Runs on every page navigation!
     const pupils: NodeListOf<HTMLElement> = document.querySelectorAll(".pupil");
@@ -133,31 +132,11 @@ import flowerImage from '../../public/assets/images/flowers.png'
     window.addEventListener('touchmove', googly);
 
   }, { once: false });
-</script>
+  </script>
 
-<!-- mobile googly shake -->
-<script>
-  function googly2() {
-    (DeviceMotionEvent as any).requestPermission().then((response:PermissionState) => {
-      if (response == 'granted') {
-          window.addEventListener('devicemotion', (event) => {
-            let shakeX: number = 0;
-            let shakeY: number = 0;
+  <!-- mobile googly shake -->
+  <script src="../pages/googly2.js">
+  </script>
+</MainLayout>
 
-            let acceleration = event.accelerationIncludingGravity;
-            if (acceleration) {
-              shakeX = acceleration.x !== null ? acceleration.x * 2 : 0;
-              shakeY = acceleration.y !== null ? acceleration.y * 2 : 0;
 
-              const shakeObject = document.getElementById('shakeObject');
-              if (shakeObject) {
-                shakeObject.style.transform = `translate(-50%, -50%) translate(${shakeX}px, ${shakeY}px)`;
-              }
-            }
-          });
-      } else {
-        console.log('Motion permission not granted');
-      }
-    });
-  }
-</script>
