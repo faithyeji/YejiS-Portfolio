@@ -1,8 +1,19 @@
 export default function Nav() {
   return (
-    <nav className="mx-20 mt-12">
+    <nav className="mx-14 sm:mx-24 mt-12">
       <div className="font-serif text-xl flex justify-between content-center items-center">
-        <div className="flex gap-5">
+        <div className="flex gap-5 items-center">
+          <a
+            href="/"
+            aria-label="Yeji's portfolio home"
+            className="block sm:hidden"
+          >
+            <img
+              src="/yejiLogo.svg"
+              className="min-w-7 pb-2 mr-6"
+              alt="yeji seo logo"
+            ></img>
+          </a>
           <div>
             <a href="/playground" aria-label="Yeji's sandbox">
               playground
@@ -12,17 +23,17 @@ export default function Nav() {
             <a href="/about">about</a>
           </div>
         </div>
-        <div>
+        <div className="hidden sm:block">
           <a href="/" aria-label="Yeji's portfolio home">
             <img
               src="/yejiLogo.svg"
-              className="w-7 pb-2"
+              className="min-w-7 pb-2"
               alt="yeji seo logo"
             ></img>
           </a>
         </div>
         <div>
-          <div className="flex gap-3 text-lg">
+          <div className="gap-3 text-lg hidden sm:flex">
             <div>
               <a
                 href="https://github.com/faithyeji"

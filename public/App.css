@@ -46,6 +46,11 @@ body {
   animation-fill-mode: forwards;
 } */
 
+.x-margin {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
 /* REPLACE! */
 @keyframes fadeInAnimation {
   0% {
@@ -54,12 +59,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-
-.header {
-  font-size: 3rem;
-  line-height: 2.5rem;
-  color: rgb(115 115 115);
 }
 
 img,

@@ -7,27 +7,28 @@ import flowerImage from '../../public/assets/images/flowers.png'
 <MainLayout title="Yeji Seo Portfolio Site" seoTitle="Yeji's World" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
   <div class="content">
   <!-- Landing intro -->
-  <img src='../assets/images/ascii.webp' alt="flower background" class="flower w-256 opacity-50 -z-10 absolute left-104" />
+  <img src='../assets/images/condensedflower.webp' alt="flower condensed background" class=" w-60 flower opacity-50 -z-10 absolute block sm:hidden left-56" />
+  <img src='../assets/images/ascii.webp' alt="flower background" class="flower w-260 opacity-50 -z-10 absolute left-108 hidden sm:block" />
   <div class="">
-    <div class="font-serif text-neutral-400 w-96 mt-14 mx-20">
+    <div class="font-serif text-neutral-400 w-96 mt-8 sm:mt-20 mx-14 sm:mx-24">
       <div class="flex gap-4 h-14 content-end items-end">
-        <h1 class="header">hi, I’m <span class="font-italic text-blue-600">Yeji</span></h1>
+        <h1 class="text-4xl sm:text-5xl text-neutral-500">hi, I’m <span class="font-italic text-blue-600">Yeji</span></h1>
         <!-- googly goo -->
-        <div class="googly">
+        <div class="googly hidden sm:block">
             <div class="pupil"></div>
             <div class="highlight"></div>
         </div>
       </div>
-      <h1 class="header">welcome to my world!</h1>
+      <h1 class="text-2xl sm:text-5xl leading-4 sm:leading-10 text-neutral-500">welcome to my world!</h1>
       
-      <h2 class="text-2xl mt-4 leading-6">
+      <h2 class="text-md sm:text-2xl w-56 sm:w-84 mt-4 leading-4 sm:leading-6">
         currently: studying human-centered design/entrepreneurship <a href="https://iovine-young.usc.edu/" target="_blank">@USC-IYA↗&#xFE0E;</a> & <a href="https://www.cs.usc.edu/academic-programs/undergrad/computer-science-games/" target="_blank">computer science @USC-GAMES↗&#xFE0E;</a>. * 
       </h2>
-      <h2 class="text-2xl mt-6 leading-6">
+      <h2 class="text-md sm:text-2xl w-56 sm:w-84 mt-6 leading-4 sm:leading-6">
         i’m a creative technologist & developer who loves to play in: design, engineering, prototyping, fun interactions, ++. 
       </h2>
 
-      <div class="text-xl mt-6 text-neutral-300 flex">
+      <div class="text-md sm:text-xl mt-6 text-neutral-300 flex">
         <p>and on the side..</p>
         <div class="words h-6">
           <span class="rotate">soymilk enthusiast.</span>
@@ -40,13 +41,13 @@ import flowerImage from '../../public/assets/images/flowers.png'
   </div>
 
   <!-- Current projects -->
-  <div class=" mt-48 mx-20 w-auto z-10 font-serif flex gap-2">
-    <div class="header text-3xl pb-4">projects*.</div>
+  <div class=" mt-20 sm:*:mt-48 mx-14 sm:mx-24 w-auto z-10 font-serif flex gap-2">
+    <div class="text-neutral-500 text-3xl pb-4">projects*.</div>
     <div class="text-neutral-300 text-2xl mb-2 animate-bounce">↓</div>
   </div>
-  <div class="mx-20 text-sm">*pst! this site is still under construction.. case studies & responsiveness coming soon!</div>
+  <div class="mx-14 sm:mx-24 text-sm min-w-60">*pst! this site is still under construction.. case studies & responsiveness coming soon!</div>
 
-  <div class=" mt-10 mx-20 w-auto z-10">    
+  <div class=" mt-10 mx-14 sm:mx-24 w-auto z-10">    
     <!-- row 1 -->
     <div class="flex flex-wrap gap-8 z-10">
       <!-- Fusebox a href="/fusebox"-->
@@ -57,28 +58,28 @@ import flowerImage from '../../public/assets/images/flowers.png'
         <img src="/assets/images/businesscard.webp" alt="card1" class="absolute w-84 left-52 top-16 rotate-[6deg] transform transition ease-in-out delay-150 group-hover:rotate-[0deg] group-hover:scale-105">
       </div></a>
       <!-- We Are G.A.M.E. -->
-      <img src="/assets/images/wearegame.webp" alt="we are game" class=" w-128 max-h-fit min-w-52 drop-shadow-md rounded-lg shrink-0">
+      <img src="/assets/images/wearegame.webp" alt="we are game" class=" w-128 max-h-fit min-w-80 drop-shadow-md rounded-lg shrink-0">
     </div>
 
     <!-- row 2 -->
     <div class=" mt-6 flex flex-wrap gap-8 z-10">
       <!-- Encore -->
       <div>
-        <img src="/assets/images/encore.webp" alt="encore" class="w-60 max-h-fit drop-shadow-md shrink-0 transform transition hover:scale-105 hover:rotate-[-4deg]">
+        <img src="/assets/images/encore.webp" alt="encore" class="w-60 max-h-fit min-w-60 drop-shadow-md shrink-0 transform transition hover:scale-105 hover:rotate-[-4deg]">
       </div>
       <div class="flex flex-col gap-4">
         <!-- Treffa -->
-        <img src="/assets/images/treffa.webp" alt="treffa" class="w-92 max-h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+        <img src="/assets/images/treffa.webp" alt="treffa" class="w-92 max-h-fit min-w-80 drop-shadow-md rounded-lg pt-3 shrink-0">
         <!-- Tattoo -->
-        <img src="/assets/images/tattoo.webp" alt="tattoo" class=" w-92 max-h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+        <img src="/assets/images/tattoo.webp" alt="tattoo" class=" w-92 max-h-fit min-w-80 drop-shadow-md rounded-lg pt-3 shrink-0">
       </div>
       <div class="flex flex-col gap-4">
         <!-- Smell Visualization -->
-        <video autoplay loop muted class="mt-2 w-86 max-h-fit rounded-lg drop-shadow-md shrink-0">
+        <video autoplay loop muted class="mt-2 w-86 max-h-fit min-w-80 rounded-lg drop-shadow-md shrink-0">
           <source type="video/webm" src="assets/videos/smelllog.webm">
         </video>
          <!-- Namu -->
-         <img src="assets/images/namu.webp" alt="namu" class=" w-68 max-h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+         <img src="assets/images/namu.webp" alt="namu" class=" w-68 min-w-80 max-h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
       </div>
   </div>
 
@@ -101,7 +102,6 @@ import flowerImage from '../../public/assets/images/flowers.png'
         (pupils[i] as any)['centerX'] = offset.left + offset.width / 2;
         (pupils[i] as any)['centerY'] = offset.bottom + offset.height / 2;
     }
-
 
     function googly(e: MouseEvent | TouchEvent): void {
         let mouseX: number;
