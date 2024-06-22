@@ -38,6 +38,8 @@ body {
   width: 100vw;
   background-color: #f8f8f8;
   overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* .content {
