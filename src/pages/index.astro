@@ -139,9 +139,9 @@ import flowerImage from '../../public/assets/images/flowers.png'
 <script>
   function googly() {
     function requestMotionPermission() {
-      (DeviceMotionEvent as any).requestPermission().then(response => {
+      (DeviceMotionEvent as any).requestPermission().then((response:PermissionState) => {
         if (response === 'granted') {
-          window.addEventListener('deviceorientation', (event) => {
+          window.addEventListener('devicemotion', (event) => {
             let shakeX: number = 0;
             let shakeY: number = 0;
 
