@@ -13,6 +13,11 @@ import flowerImage from '../../public/assets/images/flowers.png'
     <div class="font-serif text-neutral-400 w-96 mt-8 sm:mt-20 mx-14 sm:mx-24">
       <div class="flex gap-4 h-14 content-end items-end">
         <h1 class="text-4xl sm:text-5xl text-neutral-500">hi, I’m <span class="font-italic text-blue-600">Yeji</span></h1>
+        <!-- mobile shake googy -->
+        <div class="googly-mobile block sm:hidden">
+          <div class="pupil-mobile" id="shakeObject"></div>
+          <div class="highlight"></div>
+        </div>
         <!-- googly goo -->
         <div class="googly hidden sm:block">
             <div class="pupil"></div>
@@ -126,6 +131,30 @@ import flowerImage from '../../public/assets/images/flowers.png'
     window.addEventListener('mousemove', googly);
     window.addEventListener('touchstart', googly);
     window.addEventListener('touchmove', googly);
+
+  }, { once: false });
+</script>
+
+<!-- mobile googly shake -->
+<script>
+  document.addEventListener('astro:page-load', () => {
+    // Runs on every page navigation!
+    function googly(e: DeviceMotionEvent): void {
+        let shakeX: number;
+        let shakeY: number;
+
+        const acceleration = e.accelerationIncludingGravity;
+        if (acceleration) {
+          shakeX = acceleration.x !== null ? acceleration.x * 2 : 0;
+          shakeY = acceleration.y !== null ? acceleration.y * 2 : 0;
+
+          const shakeObject = document.getElementById('shakeObject');
+          if (shakeObject) {
+              shakeObject.style.transform = `translate(-50%, -50%) translate(${shakeX}px, ${shakeY}px)`;
+          }
+        }
+    }
+    window.addEventListener('devicemotion', googly);
 
   }, { once: false });
 </script>

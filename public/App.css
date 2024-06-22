@@ -142,6 +142,32 @@ img,
   border-radius: 100%;
 }
 
+.googly-mobile {
+  width: 29px;
+  height: 30px;
+  border-radius: 100%;
+  border: 0.7px solid rgb(215, 215, 215);
+  margin-bottom: 9px;
+  overflow: hidden;
+  position: relative;
+
+  box-shadow: 1px 1px 3px rgba(63, 63, 63, 0.861),
+    inset 4px -5px 8px rgba(140, 140, 140, 0.416),
+    inset 1px 4px 2px rgba(224, 224, 224, 0.224);
+}
+
+.pupil-mobile {
+  background: #1f1f1f;
+  border: 0.7px solid rgb(135, 135, 135);
+  width: 69%;
+  height: 63%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
 .highlight {
   height: 10px;
   width: 30px;
