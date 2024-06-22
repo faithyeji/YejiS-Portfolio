@@ -6,7 +6,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["ITC Garamond", ...defaultTheme.fontFamily.serif],
+        serif: [
+          "ITC Garamond",
+          "ITCfallback",
+          ...defaultTheme.fontFamily.serif,
+        ],
         italic: ["ITC Garamond Italic", ...defaultTheme.fontFamily.serif],
         sans: ["Elza", ...defaultTheme.fontFamily.sans],
       },

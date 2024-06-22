@@ -25,6 +25,17 @@
   font-display: swap;
 }
 
+/* adjusted dimensions */
+@font-face {
+  font-family: "ITCfallback";
+  src: local("Times New Roman");
+  size-adjust: 90%;
+}
+/* ascent-override: 105%;
+  descent-override: 35%;
+  line-gap-override: 10%;
+} */
+
 html {
   scroll-behavior: smooth;
 }
