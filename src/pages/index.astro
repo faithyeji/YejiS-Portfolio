@@ -138,9 +138,8 @@ import flowerImage from '../../public/assets/images/flowers.png'
 <!-- mobile googly shake -->
 <script>
   function googly() {
-    function requestMotionPermission() {
-      (DeviceMotionEvent as any).requestPermission().then((response:PermissionState) => {
-        if (response === 'granted') {
+    (DeviceMotionEvent as any).requestPermission().then((response:PermissionState) => {
+      if (response == 'granted') {
           window.addEventListener('devicemotion', (event) => {
             let shakeX: number = 0;
             let shakeY: number = 0;
@@ -155,11 +154,10 @@ import flowerImage from '../../public/assets/images/flowers.png'
                 shakeObject.style.transform = `translate(-50%, -50%) translate(${shakeX}px, ${shakeY}px)`;
               }
             }
-          }, { once: false });
-        }
-      });
-    }
-    requestMotionPermission();
+          });
+      } else {
+        console.log('Motion permission not granted');
+      }
+    });
   }
-  googly();
 </script>
