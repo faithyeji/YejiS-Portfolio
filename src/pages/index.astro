@@ -93,7 +93,7 @@ import flowerImage from '../../public/assets/images/flowers.png'
   <div class="font-serif my-10 text-end">coded with <3, FYS</div>
 
   </div>
-
+  <button id="PermsButton" onclick="googly()" style="height:50px;">Get Googly Permissions</button>
 </MainLayout>
 
 <!-- googly eye script -->
@@ -137,24 +137,29 @@ import flowerImage from '../../public/assets/images/flowers.png'
 
 <!-- mobile googly shake -->
 <script>
-  document.addEventListener('astro:page-load', () => {
-    // Runs on every page navigation!
-    function googly(e: DeviceMotionEvent): void {
-        let shakeX: number;
-        let shakeY: number;
+  function googly() {
+    function requestMotionPermission() {
+      (DeviceMotionEvent as any).requestPermission().then(response => {
+        if (response === 'granted') {
+          window.addEventListener('deviceorientation', (event) => {
+            let shakeX: number = 0;
+            let shakeY: number = 0;
 
-        const acceleration = e.accelerationIncludingGravity;
-        if (acceleration) {
-          shakeX = acceleration.x !== null ? acceleration.x * 2 : 0;
-          shakeY = acceleration.y !== null ? acceleration.y * 2 : 0;
+            let acceleration = event.accelerationIncludingGravity;
+            if (acceleration) {
+              shakeX = acceleration.x !== null ? acceleration.x * 2 : 0;
+              shakeY = acceleration.y !== null ? acceleration.y * 2 : 0;
 
-          const shakeObject = document.getElementById('shakeObject');
-          if (shakeObject) {
-              shakeObject.style.transform = `translate(-50%, -50%) translate(${shakeX}px, ${shakeY}px)`;
-          }
+              const shakeObject = document.getElementById('shakeObject');
+              if (shakeObject) {
+                shakeObject.style.transform = `translate(-50%, -50%) translate(${shakeX}px, ${shakeY}px)`;
+              }
+            }
+          }, { once: false });
         }
+      });
     }
-    window.addEventListener('devicemotion', googly);
-
-  }, { once: false });
+    requestMotionPermission();
+  }
+  googly();
 </script>
