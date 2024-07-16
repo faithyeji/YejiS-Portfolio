@@ -13,6 +13,7 @@ export default {
         ],
         italic: ["ITC Garamond Italic", ...defaultTheme.fontFamily.serif],
         sans: ["Elza", ...defaultTheme.fontFamily.sans],
+        mono: ['"Ubuntu Mono"', "monospace"],
       },
       width: {
         68: "17rem",

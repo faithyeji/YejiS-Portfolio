@@ -19,15 +19,15 @@ export default function Nav() {
               playground
             </a>
           </div>
-          <div>
+          <div className="sm:min-w-24">
             <a href="/about">about</a>
           </div>
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden sm:block text-center">
           <a href="/" aria-label="Yeji's portfolio home">
             <img
               src="/yejiLogo.svg"
-              className="min-w-7 pb-2"
+              className="min-w-7 pb-2 inline-block"
               alt="yeji seo logo"
             ></img>
           </a>
