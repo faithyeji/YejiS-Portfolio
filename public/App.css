@@ -100,7 +100,6 @@ img,
   display: block;
   height: 100%;
   padding-left: 10px;
-  /* color: #5b90e1; */
   animation: spin_words 6s infinite;
 }
 @keyframes spin_words {

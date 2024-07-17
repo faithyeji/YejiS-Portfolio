@@ -5,11 +5,11 @@ import flowerImage from '../../public/assets/images/flowers.png'
 ---
 
 <MainLayout title="Yeji Seo Portfolio Site" seoTitle="Yeji's World" seoDesc="Current student at USC's Iovine and Young Academy and Viterbi Computer Science.">
-  <div class="">
+  <div class="max-w-vw">
   <!-- Landing intro -->
-  <img src='../assets/images/condensedflower.webp' alt="flower condensed background" class=" w-55 flower opacity-50 -z-10 absolute block sm:hidden left-56" />
+  <img src='../assets/images/condensedflower.webp' alt="flower condensed background" class=" w-55 flower opacity-50 -z-10 absolute block sm:hidden left-56 overflow-x-hidden" />
   <img src='../assets/images/ascii.webp' alt="flower background" class="flower w-260 opacity-50 -z-10 absolute left-116 hidden sm:block top-40" />
-  <div class="">
+  <div class="max-w-full">
     <div class="font-serif text-neutral-400 w-96 mt-8 sm:mt-24 mx-14 sm:mx-24">
       <div class="flex gap-3 sm:gap-4 h-14 content-end items-end">
         <h1 class="text-4xl sm:text-5xl text-neutral-500">hi, I’m <span class="font-italic text-blue-600">Yeji</span></h1>
@@ -33,16 +33,16 @@ import flowerImage from '../../public/assets/images/flowers.png'
         i’m a creative technologist & developer who loves to play in: design, engineering, prototyping, fun interactions, ++. 
       </h2>
 
-      <div class="text-md sm:text-xl mt-6 text-neutral-300 flex">
+      <div class="text-md sm:text-xl mt-6 text-neutral-300 flex max-w-56">
         <p>and on the side..</p>
-        <div class="words h-6">
+        <div class="words h-6 overflow-hidden">
           <span class="rotate">soymilk enthusiast.</span>
           <span class="rotate">amateur skater.</span>
           <span class="rotate">doodler.</span>
           <span class="rotate">playlist curator.</span>
           <span class="rotate">soymilk enthusiast.</span>
         </div>
-    </div>
+      </div>
   </div>
 
   <!-- Current projects -->
@@ -52,18 +52,18 @@ import flowerImage from '../../public/assets/images/flowers.png'
   </div>
   <div class="mx-14 sm:mx-24 text-sm min-w-60">*pst! this site is still under construction.. case studies & responsiveness coming soon!</div>
 
-  <div class=" mt-10 mx-14 sm:mx-24 w-auto z-10">    
+  <div class=" mt-10 mx-14 sm:mx-24 w-72 sm:w-auto z-10">    
     <!-- row 1 -->
     <div class="flex flex-wrap gap-8 z-10">
       <!-- Fusebox -->
-      <a href="fusebox"><div class="w-80 sm:w-128 lg:w-128 h-72 bg-white rounded-lg overflow-hidden relative group shrink-0 drop-shadow-md">
+      <a href="fusebox"><div class="w-72 sm:w-128 lg:w-128 h-72 bg-white rounded-lg overflow-hidden relative group shrink-0 drop-shadow-md">
         <img src="/assets/images/fuseboxlogo.webp" class="absolute top-20 left-8 w-40" alt="Fusebox logo">
         <!-- <label class="absolute top-20 left-4">connecting creatives.</label> -->
         <img src="/assets/images/businesscard2.webp" alt="card2" class="absolute w-84 left-56 top-20 rotate-[6deg] transform transition ease-in-out delay-150 origin-bottom-right group-hover:rotate-[8deg] group-hover:scale-105">
         <img src="/assets/images/businesscard.webp" alt="card1" class="absolute w-84 left-52 top-16 rotate-[6deg] transform transition ease-in-out delay-150 group-hover:rotate-[0deg] group-hover:scale-105">
       </div></a>
       <!-- We Are G.A.M.E. -->
-      <img src="/assets/images/wearegame.webp" alt="we are game" class=" w-128 max-h-fit min-w-80 drop-shadow-md rounded-lg shrink-0">
+      <img src="/assets/images/wearegame.webp" alt="we are game" class="max-w-72 sm:max-w-128 max-h-fit drop-shadow-md rounded-lg shrink-0">
     </div>
 
     <!-- row 2 -->
@@ -74,17 +74,17 @@ import flowerImage from '../../public/assets/images/flowers.png'
       </div>
       <div class="flex flex-col gap-4">
         <!-- Treffa -->
-        <img src="/assets/images/treffa.webp" alt="treffa" class="w-92 max-h-fit min-w-80 drop-shadow-md rounded-lg pt-3 shrink-0">
+        <img src="/assets/images/treffa.webp" alt="treffa" class="w-92 max-h-fit min-w-full drop-shadow-md rounded-lg pt-3 shrink-0">
         <!-- Tattoo -->
-        <img src="/assets/images/tattoo.webp" alt="tattoo" class=" w-92 max-h-fit min-w-80 drop-shadow-md rounded-lg pt-3 shrink-0">
+        <img src="/assets/images/tattoo.webp" alt="tattoo" class=" w-92 max-h-fit min-w-full drop-shadow-md rounded-lg pt-3 shrink-0">
       </div>
       <div class="flex flex-col gap-4">
         <!-- Smell Visualization -->
-        <video autoplay loop muted class="mt-2 w-86 max-h-fit min-w-80 rounded-lg drop-shadow-md shrink-0">
+        <video autoplay loop muted class="mt-2 w-86 max-h-fit min-w-full rounded-lg drop-shadow-md shrink-0">
           <source type="video/webm" src="assets/videos/smelllog.webm">
         </video>
          <!-- Namu -->
-         <img src="assets/images/namu.webp" alt="namu" class=" w-68 min-w-80 max-h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
+         <img src="assets/images/namu.webp" alt="namu" class=" w-68 min-w-full max-h-fit drop-shadow-md rounded-lg pt-3 shrink-0">
       </div>
   </div>
 

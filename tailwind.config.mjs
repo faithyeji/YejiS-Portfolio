@@ -22,6 +22,7 @@ export default {
         88: "22rem",
         90: "22.5rem",
         92: "23rem",
+        100: "25rem",
         160: "40rem",
         200: "50rem",
         240: "60rem",
@@ -30,6 +31,9 @@ export default {
         260: "65rem",
         280: "70rem",
         320: "80rem",
+      },
+      maxWidth: {
+        vw: "100vw",
       },
       spacing: {
         104: "26rem",
