@@ -1,7 +1,7 @@
 export default function Nav() {
   return (
-    <nav className="mx-14 sm:mx-24 mt-12">
-      <div className="font-serif text-xl flex justify-between content-center items-center">
+    <nav className="pt-12 pb-4 sm:pb-16 sticky top-0 z-40 bg-custom fade">
+      <div className="font-serif text-xl mx-14 sm:mx-24 flex justify-between content-center items-center ">
         <div className="flex gap-5 items-center">
           <a
             href="/"

@@ -44,6 +44,9 @@ export default {
         136: "34rem",
         144: "36rem",
       },
+      colors: {
+        custom: "#f8f8f8",
+      },
     },
   },
   plugins: [],
