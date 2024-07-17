@@ -219,6 +219,7 @@ img,
 .canvas {
   z-index: 20;
   position: absolute;
+  top: 12%;
   display: block;
 }
 
@@ -253,9 +254,7 @@ img,
   --mask: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 0,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(0, 0, 0, 0.9) 55%,
-      rgba(0, 0, 0, 0.7) 65%,
+      rgba(0, 0, 0, 1) 57%,
       rgba(0, 0, 0, 0) 95%,
       rgba(0, 0, 0, 0) 0
     )
