@@ -52,7 +52,9 @@ export default function Nav() {
                 CV
               </a>
             </div>
-            <div>hello@faithyejiseo↗&#xFE0E;</div>
+            <a href="mailto:faithyejiseo@gmail.com">
+              <div>hello@faithyejiseo↗&#xFE0E;</div>
+            </a>
           </div>
         </div>
       </div>
