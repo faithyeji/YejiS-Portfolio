@@ -276,3 +276,59 @@ img,
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
+
+.stagger-fade {
+  /* staggered fade on page load */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-fade:nth-of-type(1) {
+  animation-delay: 150ms;
+}
+.stagger-fade:nth-of-type(2) {
+  animation-delay: 250ms;
+}
+.stagger-fade:nth-of-type(3) {
+  animation-delay: 350ms;
+}
+.stagger-fade:nth-of-type(4) {
+  animation-delay: 450ms;
+}
+.stagger-fade:nth-of-type(5) {
+  animation-delay: 550ms;
+}
+.stagger-fade:nth-of-type(6) {
+  animation-delay: 650ms;
+}
+.stagger-fade:nth-of-type(7) {
+  animation-delay: 750ms;
+}
+.stagger-fade:nth-of-type(8) {
+  animation-delay: 850ms;
+}
+.stagger-fade:nth-of-type(9) {
+  animation-delay: 950ms;
+}
+.stagger-fade:nth-of-type(10) {
+  animation-delay: 1050ms;
+}
+.stagger-fade:nth-of-type(11) {
+  animation-delay: 1150ms;
+}
+.stagger-fade:nth-of-type(12) {
+  animation-delay: 1250ms;
+}

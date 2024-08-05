@@ -2,7 +2,7 @@
 const { projectName, type, imgsrc, bgSize = 'contain' } = Astro.props;
 const bgClass = bgSize === 'cover' ? 'bg-cover' : bgSize === 'contain' ? 'bg-contain' : '';
 ---
-<div class={`w-88 h-64 bg-no-repeat bg-center rounded-md relative ${bgClass}`} style={`background-image: url('${imgsrc}');`}>
+<div class={`w-88 h-64 bg-no-repeat bg-center rounded-md relative stagger-fade ${bgClass}`} style={`background-image: url('${imgsrc}');`}>
   <div class="opacity-0 hover:opacity-80 h-full duration-300 text-md text-white font-semibold bg-black flex flex-col items-start justify-end pl-4 pb-4">
     <span class="text-xl mb-0">{projectName}</span>
     <span class="text-sm font-sans">{type}</span>
