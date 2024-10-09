@@ -1,7 +1,7 @@
 export default function Nav() {
   return (
     <nav className="pt-12 pb-4 sm:pb-16 sticky top-0 z-30 bg-custom bg-opacity-60 backdrop-blur-md fade">
-      <div className="font-serif text-xl mx-14 sm:mx-24 flex justify-between content-center items-center ">
+      <div className="font-serif text-xl mx-14 sm:mx-32 flex justify-between content-center items-center ">
         <div className="flex gap-5 items-center">
           <a
             href="/"
