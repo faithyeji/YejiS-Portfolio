@@ -47,6 +47,9 @@ export default {
       colors: {
         custom: "#f8f8f8",
       },
+      scale: {
+        102: "1.025",
+      },
     },
   },
   plugins: [],
