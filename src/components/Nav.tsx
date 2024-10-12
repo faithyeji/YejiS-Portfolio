@@ -53,7 +53,7 @@ export default function Nav() {
               </a>
             </div>
             <a href="mailto:faithyejiseo@gmail.com">
-              <div>hello@faithyejiseo↗&#xFE0E;</div>
+              <div>email↗&#xFE0E;</div>
             </a>
           </div>
         </div>
