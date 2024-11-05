@@ -3,7 +3,7 @@ const { title, cardWidth, imageSrc, imageClass, link } = Astro.props;
 ---
 <div class={`flex gap-6 flex-wrap`}>
   <a href={link} target="blank_">
-  <div class={`w-${cardWidth} min-h-full bg-neutral-100 bg-opacity-40 backdrop-blur-sm rounded-md flex flex-col items-center p-5 group hover:bg-neutral-200 transition ease-out drop-shadow-md stagger-fade overflow-hidden`}>
+  <div class={`w-${cardWidth} min-h-60 lg:min-h-full bg-neutral-100 bg-opacity-40 backdrop-blur-sm rounded-md flex flex-col items-center p-5 group hover:bg-neutral-200 transition ease-out drop-shadow-md stagger-fade overflow-hidden`}>
     <div class="flex justify-between w-full text-neutral-500 group-hover:text-neutral-600 transition">
       <h3>{title}</h3>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#737373" class="h-4 w-4">
