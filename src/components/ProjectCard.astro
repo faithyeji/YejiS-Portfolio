@@ -1,5 +1,5 @@
 ---
-const { title, cardWidth, imageSrc, imageClass, link } = Astro.props;
+const { title, cardWidth, imageSrc, imageClass, link, description } = Astro.props;
 ---
 <div class={`flex gap-6 flex-wrap`}>
   <a href={link} target="blank_">
@@ -10,7 +10,9 @@ const { title, cardWidth, imageSrc, imageClass, link } = Astro.props;
         <path d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"></path>
       </svg>
     </div>
-    <img src={imageSrc} class={`rounded-lg drop-shadow-xl transition ease-out ${imageClass}`} alt={title} />
+    <img src={imageSrc} class={`rounded-lg drop-shadow-xl transition ease-out ${imageClass}`} alt={title} loading="eager" />
+    <p class="mt-4 text-sm leading-4 text-neutral-500 text-center">{description}</p>
+
   </div>
 </a>
 </div>
